@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">
+    <title>Weather|Get Your weather</title>
+  </head>
+  <body>
+    <section class="is-primary">  
+        <div class="hero-body">
+          <h1>
+            What's the weather like?
+          </h1>
+        </div>
+      
+        </section> 
+   
+    
+        <section>
+          <form method="POST">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter City" >
+              <div class="input-group-append">
+                <button class="btn btn-outline-success" type="button">Search</button>
+              </div>
+            </div>
+            
+          </form>
+        </section>   
+      </div>   
+  </body>
+</html>
