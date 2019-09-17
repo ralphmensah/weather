@@ -1,37 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		
+		
+		<title>Whats the weather Like!</title>
+		<link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='favicon-16x16.png')}}">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">
-    <title>Weather|Get Your weather</title>
-  </head>
-  <body>
-    <section class="is-primary">  
-        <div class="hero-body">
-          <h1>
-            What's the weather like?
-          </h1>
-        </div>
-      
-        </section> 
-   
-    
-        <section>
-          <form method="POST">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter City" >
-              <div class="input-group-append">
-                <button class="btn btn-outline-success" type="button">Search</button>
-              </div>
-            </div>
-            
-          </form>
-        </section>   
-      </div>   
-  </body>
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">
+		
+		
+
+	</head>
+
+
+	<body>
+		
+		<div class="container-fluid">
+			<div class="site-header">
+				<div class="container text-white font-weight-lighter">
+					
+					<h1>What's the weather like!</h1>
+					
+				</div>
+			</div> 
+
+
+			<div class="hero" data-bg-image="{{url_for('static',filename='images/banner.png') }}">
+				<div class="container">
+					<form  method="POST" class="find-location">
+						<input type="text"name="city" placeholder="Enter Location">
+						<input type="submit" value="Find Weather">
+					</form>
+
+				</div>
+			</div>
+			{%for weather in data%}
+			<!-- <div class="forecast-table"> -->
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location text-capitalize">{{weather.city}}</div>
+								<div class="degree">
+									<div class="num">{{weather.temperature}}<sup>o</sup>C</div>
+									<div class="forecast-icon">
+										<img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" alt="" width=90>
+									</div>	
+								</div>
+								<span class="text-capitalize">{{weather.discription}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			{%endfor%}
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="https://twitter.com/iam_freakie"><i class="fa fa-twitter"></i></a>
+								
+							</div>
+						</div>
+					
+
+					<p class="text-justify">Copyright 2019 raphichub. Designed with <i class="fa fa-heart "></i>by<a href="#"> Raphael Mensah</a>.  All rights reserved 
+						This webApp is Hosted on  <a class="text-decoration-none" href="#">GitHub<i class="fa fa-github"></i></a></p>
+					
+					</p>
+				
+				
+			
+		</div>
+		
+		<script src="{{url_for('static',filename='js/jquery-1.11.1.min.js') }}"></script>
+		<script src="{{url_for('static',filename='js/plugins.js') }}"></script>
+		<script src="{{url_for('static',filename='js/app.js') }}"></script>
+		
+	</body>
+
 </html>
