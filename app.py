@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     
     try:
-        url='http://api.openweathermap.org/data/2.5/weather?q={}&APPID=9a9e6eeb16ffef5a4c5c1ba9bf0bffc4'
+        url='http://api.openweathermap.org/data/2.5/weather?q={}&APPID=9a9e6eeb16ffef5a4c5c1ba9bf0bffc4&units=metric'
     # city = "Accra"
     
         data=[]
