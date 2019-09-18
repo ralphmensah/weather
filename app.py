@@ -26,7 +26,7 @@ def index():
                     }
             data.append(weather)
     except:
-        print("hi") 
+        pass
     
         
     return render_template("index.html",  data = data)
