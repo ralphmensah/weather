@@ -4,7 +4,7 @@ from form import NewForm
 from datetime import datetime,timedelta
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = '16e6f9980e1feee2ebe8dad714089a3589fd42ab'
+# app.config['SECRET_KEY'] = '16e6f9980e1feee2ebe8dad714089a3589fd42ab'
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
