@@ -1,6 +1,5 @@
 from flask import Flask,render_template,request,url_for
 import requests
-from form import NewForm
 from datetime import datetime,timedelta
 app = Flask(__name__)
 
