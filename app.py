@@ -25,7 +25,7 @@ def index():
         data.append(weather)
     
         
-    return render_template("index.html",  data = data, form = form)
+    return render_template("index.html",  data = data)
 
 
 
