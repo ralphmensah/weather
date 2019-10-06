@@ -1,29 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
 
-      <section class="section mt-md-4">
-      <div class="container">
+      <section class="container-fluid mt-md-6">
+      
         <br/>
         <br/>
         <form  method="POST" >
 
-         <div class="row">
-                <div class="col-md-11 col-sm-10 col-xs-3"> 
+         <div class="row no-gutter">
+                <div class="col-10"> 
                  <input class="input form-control" type="search" name="city" placeholder="Enter Location"/> 
                 </div> 
-         <div class="col-md-1 col-sm-2 col-xs-3">
+                <div class="col-2">
+                        <!-- <span class="input-group-btn">
+                                <button type='submit' class='btn btn-default'>
+                                  <span class='glyphicon glyphicon-search'></span>
+                                </button>
+                              </span> -->
+                <span class="input-group-btn">
                 <button class="btn btn-outline-success" type="submit">Search</button>
-        </div>
+                </span>
+            </div>
             </div>
         </form>
         <br/>
         <br/>
-      </div>
+      
     </section>
 
     {%for weather in data%}
     <section class="section m-md-4 m-4">
-        <div class="container bg-info rounded-lg text-white  font-weight-light">
+        <div class="container bg-info rounded text-white  font-weight-light">
             <div class="p-2 ">
                
                 <h3 class="text-capitalize" >{{weather.city}}</h3>
