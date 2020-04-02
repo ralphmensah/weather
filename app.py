@@ -1,9 +1,9 @@
-from flask import Flask,render_template,request,url_for
+from flask import Flask,render_template,request,url_for,flash,redirect
 import requests
 from datetime import datetime,timedelta
 app = Flask(__name__)
 
-# app.config['SECRET_KEY'] = '16e6f9980e1feee2ebe8dad714089a3589fd42ab'
+app.config['SECRET_KEY'] = '16e6f9980e1feee2ebe8dad714089a3589fd42ab'
 
 @app.route("/home", methods=['GET', 'POST'])
 @app.route("/", methods=['GET', 'POST'])
@@ -11,7 +11,7 @@ def index():
     # form = NewForm()
     try:
         url='http://api.openweathermap.org/data/2.5/weather?q={}&APPID=9a9e6eeb16ffef5a4c5c1ba9bf0bffc4&units=metric'
-    # city = "Accra"
+        # city = "Accra"
         data=[]
         if request.method == 'POST':
             city = str(request.form.get('city').capitalize())
@@ -25,7 +25,9 @@ def index():
             data.append(weather)
     
     except:
-        pass
+        
+        flash(f'Weather Information not Found for {city.title()}')
+        return redirect(url_for('index'))
 
     return render_template("index.html",  data = data)
     
