@@ -9,13 +9,12 @@ git clone https://github.com/ralphmensah/weather.git
 cd weather
 $ pip3 install -r requirements.txt
 
-
-In browser type:
-$ ip_address:<port> - localhost:5000
 ```
 
 ## Usage
 
 Type `python3 app.py` to start flask server.
+
+In browser type: ` ip_address:<port> - localhost:5000`
 
 Sample page Here: <https://weather-flsk.herokuapp.com/>
