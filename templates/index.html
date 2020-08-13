@@ -2,49 +2,41 @@
 {% block content %}
 
 <section class="container-fluid mt-md-6">
-  <br/>
-  <br/>
-  <form  method="POST" >
+  <br />
+  <br />
+  <form method="POST">
     <div class="input-group">
-      <input type="search" class="form-control" name="city" placeholder="Enter Location" required/>
-        <div class="input-group-append">
-          <button class="btn  btn-outline-success" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
+      <input type="search" class="form-control" name="city" placeholder="Enter Location" required />
+      <div class="input-group-append">
+        <button class="btn  btn-outline-success" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
     </div>
   </form>
-  <br/>
-  <br/>
+  <br />
+  <br />
 </section>
 
 {%for weather in data%}
-  <section class="section m-md-4 m-4">
-    <div class="container bg-info rounded text-white  font-weight-light">
-      <div class="p-2 ">
-        <h3 class="text-capitalize" >{{weather.city}}</h3>
-          <div class="row">
-            <h1 style="font-size: 100px" class="text-lg">{{weather.temperature}} &#8451</h1>
-              <span > <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" style="height:auto;" alt="" width=90> </span>
-          </div>
-          <div class="row">
-              <div class="col-md-2  text-white text-lg">
-                <h4 class="text-capitalize">{{weather.discription}}</h4>
-              </div>
-          </div>
+<section class="section m-md-4 m-4">
+  <div class="container bg-info rounded text-white  font-weight-light">
+    <div class="p-2 ">
+      <h3 class="text-capitalize">{{weather.city}}</h3>
+      <div class="row">
+        <h1 style="font-size: 100px" class="text-lg">{{weather.temperature}} &#8451</h1>
+        <span> <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" style="height:auto;" alt="" width=90> </span>
+      </div>
+      <div class="row">
+        <div class="col-md-2  text-white text-lg">
+          <h4 class="text-capitalize">{{weather.discription}}</h4>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 {%endfor%}
 
-    <!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">
-    <!-- © 2019 RaphicHub -->
-      <br/>Designed with <i style="color:red" class="fa fa-heart "></i> by <span class="font-weight-bold">Rapheal Mensah </span>and hosted on <a class="text-decoration-none" href="https://github.com/ralphmensah/weather" target="_blank">GitHub<i class="fa fa-github"></i></a>
-      <br/> Let's connect <a style="text-decoration: none" href="https://twitter.com/ralphmensah_" target="_blank">Twitter<i class="fa fa-twitter"></i></a>
-  </div>
-</footer>
+
 
 {% endblock%}
