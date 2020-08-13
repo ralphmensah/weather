@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,url_for,flash,redirect
-import requests
+import requests,config
 from datetime import datetime,timedelta
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def index():
         data=[]
         if request.method == 'POST':
             city = str(request.form.get('city').capitalize())
-            url=f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID=9a9e6eeb16ffef5a4c5c1ba9bf0bffc4&units=metric'
+            url=f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={config.api_key}=metric'
             request_url = (requests.get(city)).json()
             weather = {
                 "city": city,

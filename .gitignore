@@ -3,3 +3,4 @@ flaskapp
 templates/try.html
 form.py
 static/bootstrap
+config.py
