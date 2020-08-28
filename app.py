@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '16e6f9980e1feee2ebe8dad714089a3589fd42ab'
 
-@app.route("/home", methods=['GET', 'POST'])
+
 @app.route("/", methods=['GET', 'POST'])
 def index():
     # form = NewForm()
@@ -15,7 +15,7 @@ def index():
         data=[]
         if request.method == 'POST':
             city = str(request.form.get('city').capitalize())
-            url=f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={config.api_key}=metric'
+            url=f'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID='+config.api_key+'=metric'
             request_url = (requests.get(city)).json()
             weather = {
                 "city": city,

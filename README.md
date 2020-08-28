@@ -17,4 +17,6 @@ Type `python3 app.py` to start flask server.
 
 In browser type: ` ip_address:<port> - localhost:5000`
 
-Sample page Here: <https://weather-flsk.herokuapp.com/>
+
+
+NB: replace `config.api_key` with api key.
