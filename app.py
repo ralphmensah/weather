@@ -44,4 +44,4 @@ def server_failure(e):
 
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run()
